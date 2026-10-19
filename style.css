@@ -13,7 +13,8 @@
 .fashion-section-heading > a, .fashion-shop-link { color: var(--pink-dark); font-size: 11px; font-weight: 700; text-decoration: none; }
 .fashion-product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .fashion-product-card { min-width: 0; border: 1px solid var(--line); border-radius: 5px; padding: 12px; background: #fff; }
-.fashion-product-art { height: 112px; display: grid; place-items: center; background: linear-gradient(135deg, #fff0f4, #f6e6ed 55%, #f8f2f4); color: #c34a77; margin-bottom: 13px; }
+.fashion-product-art { height: 220px; overflow: hidden; display: block; background: linear-gradient(135deg, #fff0f4, #f6e6ed 55%, #f8f2f4); color: #c34a77; margin-bottom: 13px; }
+.fashion-product-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .fashion-product-art span { font-family: 'Playfair Display', Georgia, serif; font-size: 17px; line-height: 1.05; text-align: center; letter-spacing: 1px; }
 .fashion-brand { margin: 0 0 6px; color: var(--pink-dark); font-size: 10px; text-transform: uppercase; letter-spacing: .7px; font-weight: 700; }
 .fashion-product-card h3 { margin: 0 0 7px; color: #302930; font-size: 13px; line-height: 1.45; }
@@ -22,4 +23,4 @@
 .fashion-price span { font-size: 9px; font-weight: 400; color: #8c8189; }
 .fashion-shop-link { display: inline-block; border-top: 1px solid var(--line); padding-top: 10px; width: 100%; }
 .fashion-disclaimer { margin-top: 18px; color: #8b8188; font-size: 10px; line-height: 1.6; }
-@media (max-width: 520px) { .fashion-product-grid { grid-template-columns: 1fr 1fr; gap: 9px; } .fashion-product-card { padding: 9px; } .fashion-product-art { height: 88px; } .fashion-section-heading { align-items: start; flex-direction: column; } .fashion-product-card h3 { font-size: 12px; } }
+@media (max-width: 520px) { .fashion-product-grid { grid-template-columns: 1fr 1fr; gap: 9px; } .fashion-product-card { padding: 9px; } .fashion-product-art { height: 150px; } .fashion-section-heading { align-items: start; flex-direction: column; } .fashion-product-card h3 { font-size: 12px; } }

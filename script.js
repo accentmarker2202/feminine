@@ -3,7 +3,7 @@
 // ============================================================
 
 const API_BASE =
-    "https://secure-chat-backend-eight.vercel.app/api";
+    "https://backendframeload.vercel.app/api";
 
 const VERIFY_DATE_API =
     `${API_BASE}/verify-date`;
@@ -159,6 +159,7 @@ function showChatPasswordGate() {
 
     if (askmeContainer) {
         askmeContainer.classList.add("visible");
+        askmeContainer.classList.remove("chat-authenticated");
     }
 
     if (passwordGate) {
@@ -524,6 +525,10 @@ async function loginToChat(event) {
             authenticatedChat.classList.add("visible");
         }
 
+        const chatContainer = document.getElementById("askmeContainer");
+        if (chatContainer) {
+            chatContainer.classList.add("chat-authenticated");
+        }
 
         if (!chatInitialized) {
 
@@ -2413,6 +2418,8 @@ async function closeChat() {
             askmeContainer.classList.remove(
                 "visible"
             );
+
+            askmeContainer.classList.remove("chat-authenticated");
         }
 
 

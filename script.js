@@ -516,18 +516,26 @@ async function loginToChat(event) {
             );
 
 
-        if (passwordGate) {
-            passwordGate.classList.remove("visible");
+        const chatContainer = document.getElementById("askmeContainer");
+
+        // Switch the entire overlay to chat mode. Inline display rules make
+        // this reliable even if an older stylesheet is cached by the browser.
+        if (chatContainer) {
+            chatContainer.classList.add("visible", "chat-authenticated");
+            chatContainer.style.cssText += ";position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0;z-index:99999;overflow:hidden;display:flex;flex-direction:column;background:#fff";
         }
 
+        if (passwordGate) {
+            passwordGate.classList.remove("visible");
+            passwordGate.style.setProperty("display", "none", "important");
+        }
 
         if (authenticatedChat) {
             authenticatedChat.classList.add("visible");
-        }
-
-        const chatContainer = document.getElementById("askmeContainer");
-        if (chatContainer) {
-            chatContainer.classList.add("chat-authenticated");
+            authenticatedChat.style.setProperty("display", "flex", "important");
+            authenticatedChat.style.setProperty("flex-direction", "column", "important");
+            authenticatedChat.style.setProperty("height", "calc(100dvh - 58px)", "important");
+            authenticatedChat.style.setProperty("min-height", "0", "important");
         }
 
         if (!chatInitialized) {
@@ -558,7 +566,7 @@ async function loginToChat(event) {
     } finally {
 
         unlockButton.disabled = false;
-        unlockButton.textContent = "Update the comments";
+        unlockButton.textContent = "Open style notes";
     }
 }
 

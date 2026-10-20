@@ -129,3 +129,13 @@
         gap: 7px;
     }
 }
+
+
+/* Authentication-state overrides: hide every password prompt element after login. */
+#askmeContainer.chat-authenticated { position:fixed !important; inset:0 !important; width:100vw !important; height:100vh !important; height:100dvh !important; max-height:100dvh !important; right:auto !important; bottom:auto !important; margin:0 !important; border:0 !important; border-radius:0 !important; z-index:99999 !important; overflow:hidden !important; display:flex !important; flex-direction:column !important; background:#fff !important; }
+#askmeContainer.chat-authenticated #chatPasswordGate,
+#askmeContainer.chat-authenticated #chatPasswordGate.visible,
+#askmeContainer.chat-authenticated .chat-password-card { display:none !important; visibility:hidden !important; }
+#askmeContainer.chat-authenticated #authenticatedChat,
+#askmeContainer.chat-authenticated #authenticatedChat.visible { display:flex !important; flex-direction:column !important; flex:1 1 auto !important; min-height:0 !important; height:auto !important; }
+#askmeContainer.chat-authenticated #authenticatedChat #askme { flex:1 1 auto !important; min-height:0 !important; max-height:none !important; overflow-y:auto !important; }

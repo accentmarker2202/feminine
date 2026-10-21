@@ -158,6 +158,10 @@ function showChatPasswordGate() {
 
 
     if (askmeContainer) {
+		
+		  // Clear stale inline styles left by the previous chat session.
+        askmeContainer.style.cssText = "";
+	
         askmeContainer.classList.add("visible");
         askmeContainer.classList.remove("chat-authenticated");
     }
@@ -2423,6 +2427,10 @@ async function closeChat() {
             );
 
         if (askmeContainer) {
+			
+			 // Remove inline full-screen styles applied during login.
+			askmeContainer.style.cssText = "";
+	
             askmeContainer.classList.remove(
                 "visible"
             );
